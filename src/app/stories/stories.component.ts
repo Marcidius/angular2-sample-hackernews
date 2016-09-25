@@ -14,12 +14,10 @@ import { HackerNewsAPIService } from '../hackernews-api.service';
 export class StoriesComponent implements OnInit {
     items;
 
-    constructor(private _hackerNewsAPIService: HackerNewsAPIService) {
-        this.items = Array(30).fill(30).map((x, i) => i);
-    }
+    constructor(private _hackerNewsAPIService: HackerNewsAPIService) {}
 
     ngOnInit() {
-        this._hackerNewsAPIService.fetchStories()
+        this._hackerNewsAPIService.fetchStories('news', 1)
             .subscribe(
                 items => this.items = items,
                 error => console.log('Error fetching Stories.')
