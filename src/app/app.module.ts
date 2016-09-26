@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ItemComponent } from './item/item.component';
 
 import { HackerNewsAPIService } from './hackernews-api.service';
+import { routing } from './app.routes';
+import { ItemCommentsComponent } from './item-comments/item-comments.component';
 
 
 @NgModule({
@@ -18,12 +20,14 @@ import { HackerNewsAPIService } from './hackernews-api.service';
     HeaderComponent,
     StoriesComponent,
     FooterComponent,
-    ItemComponent
+    ItemComponent,
+    ItemCommentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [HackerNewsAPIService],
   bootstrap: [AppComponent]
